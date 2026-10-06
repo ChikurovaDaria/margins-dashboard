@@ -1,0 +1,11 @@
+{
+  "name": "margins-travel-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/server.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node --check main.js && node --check js/UIComponent.js && node --check js/Dashboard.js && node --check js/PackingWidget.js && node --check js/FieldNoteWidget.js && node --check js/CountryWidget.js && node --check js/HolidayWidget.js"
+  }
+}

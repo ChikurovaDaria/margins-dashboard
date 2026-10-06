@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MARGINS — интерактивный дашборд для неспешного планирования путешествий." />
+    <title>MARGINS — кабинет путешествия</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">Перейти к виджетам</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="MARGINS — на главную">
+        <span class="brand__mark" aria-hidden="true">M</span>
+        <span>MARGINS</span>
+      </a>
+      <p>Кабинет медленных путешествий</p>
+      <span class="edition">№ 01 · 2026</span>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro__copy">
+          <p class="kicker">Планируйте не маршрут, а впечатления</p>
+          <h1 id="page-title">Соберите путешествие из деталей.</h1>
+          <p class="intro__lead">
+            Страны, праздники, вещи и маленькие наблюдения — всё на одном живом столе.
+          </p>
+        </div>
+        <div class="postcard" aria-hidden="true">
+          <span class="postcard__stamp">GO<br />SLOW</span>
+          <svg viewBox="0 0 320 160" role="img">
+            <path d="M18 128c40-30 64-18 96-46 30-27 53-17 78-37 28-22 54-19 110-28" />
+            <circle cx="58" cy="110" r="7" />
+            <circle cx="213" cy="48" r="7" />
+            <path d="M65 106l141-54" stroke-dasharray="8 10" />
+          </svg>
+        </div>
+      </section>
+
+      <section class="desk" aria-label="Панель управления путешествием">
+        <aside class="catalog" aria-labelledby="catalog-title">
+          <div>
+            <p class="section-number">01 / инструменты</p>
+            <h2 id="catalog-title">Добавить на стол</h2>
+          </div>
+          <div class="catalog__list">
+            <button class="catalog-card" type="button" data-add-widget="packing">
+              <span class="catalog-card__number">A</span>
+              <span><strong>Чемодан</strong><small>Список вещей</small></span>
+              <span aria-hidden="true">＋</span>
+            </button>
+            <button class="catalog-card" type="button" data-add-widget="field-note">
+              <span class="catalog-card__number">B</span>
+              <span><strong>Полевая заметка</strong><small>Идея для наблюдения</small></span>
+              <span aria-hidden="true">＋</span>
+            </button>
+            <button class="catalog-card" type="button" data-add-widget="country">
+              <span class="catalog-card__number">C</span>
+              <span><strong>Паспорт страны</strong><small>World Bank API</small></span>
+              <span aria-hidden="true">＋</span>
+            </button>
+            <button class="catalog-card" type="button" data-add-widget="holidays">
+              <span class="catalog-card__number">D</span>
+              <span><strong>Праздничный календарь</strong><small>Nager.Date API</small></span>
+              <span aria-hidden="true">＋</span>
+            </button>
+          </div>
+          <p class="catalog__hint">Добавляйте несколько экземпляров: у каждого останется своё состояние.</p>
+        </aside>
+
+        <section class="workspace" id="workspace" aria-labelledby="workspace-title">
+          <header class="workspace__header">
+            <div>
+              <p class="section-number">02 / рабочий стол</p>
+              <h2 id="workspace-title">Моя поездка</h2>
+            </div>
+            <p><span id="widget-count">00</span> объектов</p>
+          </header>
+          <div class="empty-state" id="empty-state">
+            <span aria-hidden="true">↗</span>
+            <h3>Стол пока пуст</h3>
+            <p>Выберите инструмент слева — здесь появится первый виджет.</p>
+          </div>
+          <div class="widget-grid" id="widget-grid" hidden></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>MARGINS · учебный проект на ES6 Modules</p>
+      <p>Данные API используются как справочные</p>
+    </footer>
+    <div class="visually-hidden" id="announcer" aria-live="polite"></div>
+  </body>
+</html>
